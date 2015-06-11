@@ -15,6 +15,9 @@
 		9666FC781B2A032F005215D4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9666FC761B2A032F005215D4 /* LaunchScreen.xib */; };
 		9666FC841B2A032F005215D4 /* Zooming_IconsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9666FC831B2A032F005215D4 /* Zooming_IconsTests.m */; };
 		9666FC8F1B2A03F0005215D4 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9666FC8E1B2A03F0005215D4 /* MenuViewController.m */; };
+		9666FC921B2A30FB005215D4 /* MenuFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9666FC911B2A30FB005215D4 /* MenuFlowLayout.m */; };
+		9666FC951B2A3F67005215D4 /* SocialItemViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9666FC941B2A3F67005215D4 /* SocialItemViewCell.m */; };
+		9666FC981B2A45E0005215D4 /* SocialItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9666FC971B2A45E0005215D4 /* SocialItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,12 @@
 		9666FC831B2A032F005215D4 /* Zooming_IconsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Zooming_IconsTests.m; sourceTree = "<group>"; };
 		9666FC8D1B2A03F0005215D4 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		9666FC8E1B2A03F0005215D4 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		9666FC901B2A30FB005215D4 /* MenuFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuFlowLayout.h; sourceTree = "<group>"; };
+		9666FC911B2A30FB005215D4 /* MenuFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuFlowLayout.m; sourceTree = "<group>"; };
+		9666FC931B2A3F67005215D4 /* SocialItemViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialItemViewCell.h; sourceTree = "<group>"; };
+		9666FC941B2A3F67005215D4 /* SocialItemViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialItemViewCell.m; sourceTree = "<group>"; };
+		9666FC961B2A45E0005215D4 /* SocialItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialItem.h; sourceTree = "<group>"; };
+		9666FC971B2A45E0005215D4 /* SocialItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +99,12 @@
 				9666FC6F1B2A032F005215D4 /* ViewController.m */,
 				9666FC8D1B2A03F0005215D4 /* MenuViewController.h */,
 				9666FC8E1B2A03F0005215D4 /* MenuViewController.m */,
+				9666FC901B2A30FB005215D4 /* MenuFlowLayout.h */,
+				9666FC911B2A30FB005215D4 /* MenuFlowLayout.m */,
+				9666FC931B2A3F67005215D4 /* SocialItemViewCell.h */,
+				9666FC941B2A3F67005215D4 /* SocialItemViewCell.m */,
+				9666FC961B2A45E0005215D4 /* SocialItem.h */,
+				9666FC971B2A45E0005215D4 /* SocialItem.m */,
 				9666FC711B2A032F005215D4 /* Main.storyboard */,
 				9666FC741B2A032F005215D4 /* Images.xcassets */,
 				9666FC761B2A032F005215D4 /* LaunchScreen.xib */,
@@ -224,10 +239,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9666FC951B2A3F67005215D4 /* SocialItemViewCell.m in Sources */,
 				9666FC701B2A032F005215D4 /* ViewController.m in Sources */,
 				9666FC6D1B2A032F005215D4 /* AppDelegate.m in Sources */,
 				9666FC6A1B2A032F005215D4 /* main.m in Sources */,
 				9666FC8F1B2A03F0005215D4 /* MenuViewController.m in Sources */,
+				9666FC981B2A45E0005215D4 /* SocialItem.m in Sources */,
+				9666FC921B2A30FB005215D4 /* MenuFlowLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

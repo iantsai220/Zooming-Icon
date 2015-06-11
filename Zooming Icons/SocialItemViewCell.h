@@ -1,5 +1,5 @@
 //
-//  MenuViewController.h
+//  SocialItemViewCell.h
 //  Zooming Icons
 //
 //  Created by Ian Tsai on 2015-06-11.
@@ -8,5 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MenuViewController : UICollectionViewController
+@interface SocialItemViewCell : UICollectionViewCell
+
 @end

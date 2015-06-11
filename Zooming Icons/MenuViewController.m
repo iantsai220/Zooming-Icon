@@ -7,25 +7,26 @@
 //
 
 #import "MenuViewController.h"
+#import "SocialItem.h"
 
 @interface MenuViewController ()
+
+@property (nonatomic, strong) NSMutableArray *objects;
 
 @end
 
 @implementation MenuViewController
 
-static NSString * const reuseIdentifier = @"Cell";
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.collectionView.contentInset = UIEdgeInsetsMake(100, 0, 0, 0);
     
-    // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    SocialItem *socialItemOne = [[SocialItem alloc] initWithName:@"Twitter" image:[UIImage imageNamed:@"icon-twitter"] color:[UIColor colorWithRed:0.255 green:0.557 blue:0.910 alpha:1.0] summary:@"Twitter is an online social networking service that enables users to send and read short 140-character messages called \"tweets\"."];
+    [self.objects addObject:socialItemOne];
     
-    // Do any additional setup after loading the view.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,25 +47,41 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete method implementation -- Return the number of sections
-    return 0;
+    
+    return 2;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete method implementation -- Return the number of items in the section
-    return 0;
+    
+    return section == 0 ? 2 : 3;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell
     
     return cell;
 }
 
+
+
+
 #pragma mark <UICollectionViewDelegate>
+
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    
+    NSInteger numCells = [self.collectionView numberOfItemsInSection:section];
+    CGFloat cellSpacing = ((UICollectionViewFlowLayout *) collectionViewLayout).minimumLineSpacing;
+    CGFloat cellWidth = ((UICollectionViewFlowLayout *) collectionViewLayout).itemSize.width;
+    CGFloat inset = (collectionView.bounds.size.width - (numCells * (cellWidth + cellSpacing))) * 0.5;
+    inset = MAX(inset, 0.0);
+    
+    return UIEdgeInsetsMake(0, inset, 20, inset);
+    
+}
+
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
