@@ -8,10 +8,11 @@
 
 #import "MenuViewController.h"
 #import "SocialItem.h"
+#import "SocialItemViewCell.h"
 
 @interface MenuViewController ()
 
-@property (nonatomic, strong) NSMutableArray *objects;
+@property (nonatomic, strong) NSArray *objects;
 
 @end
 
@@ -22,16 +23,37 @@
     
     self.collectionView.contentInset = UIEdgeInsetsMake(100, 0, 0, 0);
     
-    SocialItem *socialItemOne = [[SocialItem alloc] initWithName:@"Twitter" image:[UIImage imageNamed:@"icon-twitter"] color:[UIColor colorWithRed:0.255 green:0.557 blue:0.910 alpha:1.0] summary:@"Twitter is an online social networking service that enables users to send and read short 140-character messages called \"tweets\"."];
-    [self.objects addObject:socialItemOne];
+    [self loadData];
     
     
+
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)loadData {
+    
+    SocialItem *socialItemOne = [[SocialItem alloc] initWithName:@"Twitter" image:[UIImage imageNamed:@"icon-twitter"] color:[UIColor colorWithRed:0.255 green:0.557 blue:0.910 alpha:1.0] summary:@"Twitter is an online social networking service that enables users to send and read short 140-character messages called \"tweets\"."];
+
+    
+    SocialItem *socialItemTwo = [[SocialItem alloc] initWithName:@"Facebook" image:[UIImage imageNamed:@"icon-facebook"] color:[UIColor colorWithRed:0.239 green:0.353 blue:0.588 alpha:1.0] summary:@"Facebook (formerly thefacebook) is an online social networking service headquartered in Menlo Park, California. Its name comes from a colloquialism for the directory given to students at some American universities."];
+
+    
+    SocialItem *socialItemThree = [[SocialItem alloc] initWithName:@"Youtube" image:[UIImage imageNamed:@"icon-youtube"] color:[UIColor colorWithRed:0.729 green:0.188 blue:0.180 alpha:1.0] summary:@"YouTube is a video-sharing website headquartered in San Bruno, California. The service was created by three former PayPal employees in February 2005 and has been owned by Google since late 2006. The site allows users to upload, view, and share videos."];
+
+    
+    SocialItem *socialItemFour = [[SocialItem alloc] initWithName:@"Vimeo" image:[UIImage imageNamed:@"icon-vimeo"] color:[UIColor colorWithRed:0.329 green:0.737 blue:0.988 alpha:1.0] summary:@"Vimeo is a U.S.-based video-sharing website on which users can upload, share and view videos. Vimeo was founded in November 2004 by Jake Lodwick and Zach Klein"];
+
+    
+    SocialItem *socialItemFive = [[SocialItem alloc] initWithName:@"Instagram" image:[UIImage imageNamed:@"icon-instagram"] color:[UIColor colorWithRed:0.325 green:0.498 blue:0.635 alpha:1.0] summary:@"Instagram is an online mobile photo-sharing, video-sharing and social networking service that enables its users to take pictures and videos, and share them on a variety of social networking platforms, such as Facebook, Twitter, Tumblr and Flickr."];
+
+    self.objects = @[ @[socialItemOne, socialItemTwo],
+                      @[socialItemThree, socialItemFour, socialItemFive]];
+    
 }
 
 /*
@@ -58,12 +80,14 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Configure the cell
+    SocialItemViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    cell.socialItem = (self.objects)[indexPath.section][indexPath.item];
     
     return cell;
 }
+
 
 
 

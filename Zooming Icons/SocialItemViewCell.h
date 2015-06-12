@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SocialItem.h"
 
 @interface SocialItemViewCell : UICollectionViewCell
+
+@property (nonatomic, strong) SocialItem *socialItem;
+
+-(void)configure;
+
 
 @end

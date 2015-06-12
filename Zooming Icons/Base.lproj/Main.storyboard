@@ -44,19 +44,30 @@
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R60-1y-bsN">
-                                            <rect key="frame" x="8" y="8" width="84" height="84"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R60-1y-bsN">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XzS-si-E8m">
-                                                    <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XzS-si-E8m">
+                                                    <rect key="frame" x="15" y="15" width="70" height="70"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="XzS-si-E8m" firstAttribute="leading" secondItem="R60-1y-bsN" secondAttribute="leading" constant="15" id="3Jo-tG-By7"/>
+                                                <constraint firstAttribute="bottom" secondItem="XzS-si-E8m" secondAttribute="bottom" constant="15" id="G00-jX-wfp"/>
+                                                <constraint firstAttribute="trailing" secondItem="XzS-si-E8m" secondAttribute="trailing" constant="15" id="hSo-Lv-etE"/>
+                                                <constraint firstItem="XzS-si-E8m" firstAttribute="top" secondItem="R60-1y-bsN" secondAttribute="top" constant="15" id="vCV-ul-eNA"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="R60-1y-bsN" secondAttribute="trailing" id="9xv-P9-Cdh"/>
+                                    <constraint firstItem="R60-1y-bsN" firstAttribute="top" secondItem="nce-Yh-LRt" secondAttribute="top" id="ZZe-hY-FvK"/>
+                                    <constraint firstAttribute="bottom" secondItem="R60-1y-bsN" secondAttribute="bottom" id="h2J-CT-rEk"/>
+                                    <constraint firstItem="R60-1y-bsN" firstAttribute="leading" secondItem="nce-Yh-LRt" secondAttribute="leading" id="lKE-zG-YiV"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="XzS-si-E8m" id="vTN-At-2Ot"/>
                                     <outlet property="view" destination="R60-1y-bsN" id="QGd-fS-e4y"/>

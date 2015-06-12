@@ -18,11 +18,28 @@
 
 @implementation SocialItemViewCell
 
+-(void)setSocialItem:(SocialItem *)socialItem {
+    
+    _socialItem = socialItem;
+    
+    [self configure];
+}
+
+-(void)configure {
+    
+    self.view.backgroundColor = self.socialItem.color;
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+
+    self.imageView.image = self.socialItem.image;
+    
+}
+
 
 -(void)layoutSubviews {
     
+    [super layoutSubviews];
+    
     self.view.layer.cornerRadius = self.view.frame.size.width / 2;
-    self.view.backgroundColor = [UIColor redColor];
     
 }
 
